@@ -2,7 +2,7 @@
 const UNCOMPLETED_BOOK_READ_ID = "incompleteBookshelfList";  //nama sebuah class yang add di html yaang nanti akan diisi
 const COMPLETED_BOOK_READ_ID = "completeBookshelfList"; //sama seperti diatas
 const BOOK_ITEMID = "itemId";
-const BOOK_ITEMNAME = "itemName";
+
 
 
 function putBook(bName, bAuthor, bYear, isCompleted) {
@@ -53,7 +53,6 @@ function addBook(check) {
     const bookName = document.getElementById("inputBookTitle").value;
     const bookAuthor = "Penulis: " + document.getElementById("inputBookAuthor").value;
 
-    
     const bookYear = "Tahun Terbit: "+ document.getElementById("inputBookYear").value;
    
     const book = putBook(bookName, bookAuthor, bookYear, check);
@@ -61,7 +60,6 @@ function addBook(check) {
     const bookObject = composeBooksObject(bookName, bookAuthor, bookYear, check);
     
     book[BOOK_ITEMID] = bookObject.id;
-    book[BOOK_ITEMNAME] = bookObject.bName;
      
     books.push(bookObject);
   
@@ -120,8 +118,6 @@ function undoTaskBookCompleted(taskElement){
     const book = findBook(taskElement[BOOK_ITEMID]);
     book.isCompleted = false;
     newBook[BOOK_ITEMID] = book.id;
-    newBook[BOOK_ITEMNAME]= book.bName;
-    
  
     listUncompleted.append(newBook);
     taskElement.remove();
