@@ -26,6 +26,11 @@ input, button {
     color: white;
 }
 
+.head_bar h1 span{
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.589);
+}
+
 main {
     max-width: 800px;
     width: 80%;
